@@ -69,7 +69,7 @@ namespace SimpleCalculator
         //method for addition
         public static double Addition(double number1, double number2)
         {
-            double result = number1 + number2;
+            double result = number1 * number2;
             return result;
         }
 
