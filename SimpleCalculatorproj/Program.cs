@@ -22,6 +22,7 @@ namespace SimpleCalculator
                         System.Console.WriteLine("Enter number 2: ");
                         number2 = int.Parse(Console.ReadLine());
                         Console.WriteLine($"Addition: {Addition(number1, number2)}");
+                        Console.ReadLine();
                         break;
                     }
                 case 2:
@@ -32,6 +33,7 @@ namespace SimpleCalculator
                         System.Console.WriteLine("Enter number 2: ");
                         number2 = int.Parse(Console.ReadLine());
                         Console.WriteLine($"Subtraction: {Subtraction(number1, number2)}");
+                        Console.ReadLine();
                         break;
                     }
                 case 3:
@@ -42,6 +44,7 @@ namespace SimpleCalculator
                         System.Console.WriteLine("Enter number 2: ");
                         number2 = int.Parse(Console.ReadLine());
                         Console.WriteLine($"Multiplication: {Multiplication(number1, number2)}");
+                        Console.ReadLine();
                         break;
                     }
                 case 4:
@@ -52,11 +55,13 @@ namespace SimpleCalculator
                         System.Console.WriteLine("Enter number 2: ");
                         number2 = int.Parse(Console.ReadLine());
                         Console.WriteLine($"Division: {Division(number1, number2)}");
+                        Console.ReadLine();
                         break;
                     }
                 default:
                     {
                         System.Console.WriteLine("Invalid input, please entet a valid input");
+                        Console.ReadLine();
                         break;
                     }
             }
