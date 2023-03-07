@@ -1,2 +1,32 @@
 #.NET C# Console appliction 
 
+trigger:
+  - Master
+
+pool:
+  name: 'Default'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+  - task: 'DotNetCoreCLI@2'
+    displayName: dotnet build '--configuration $(buildConfiguration)'
+    inputs:
+      command: build
+      projects: '**/*.csproj'
+      arguments: '--configuration $(buildConfiguration)'
+  
+  - task: 'DotNetCoreCLI@2'
+    displayName: dotnet publish '--configuration $(buildConfiguration) --output $(Build.StagingDirectory)
+    inputs:
+      command: publish
+      publishWebProjects: false
+      projects: '**/*.csproj'
+      arguments: '--configuration $(buildConfiguration) --output $(Build.StagingDirectory)'
+      zipAfterPublish: true
+
+  - task: 'PublishBuildArtifacts@1'
+    displayName: publish
+
+  
