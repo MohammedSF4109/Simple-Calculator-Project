@@ -21,7 +21,7 @@ steps:
     displayName: dotnet build '--configuration $(buildConfiguration)'
     inputs:
       command: build
-      projects: '**/*.csproj'
+      projects: '**/SimpleCalculatorproj.csproj'
       arguments: '--configuration $(buildConfiguration)'
   
   - task: 'DotNetCoreCLI@2'
@@ -29,7 +29,7 @@ steps:
     inputs:
       command: publish
       publishWebProjects: false
-      projects: '**/*.csproj'
+      projects: '**/SimpleCalculatorproj.csproj'
       arguments: '--configuration $(buildConfiguration) --output $(Build.StagingDirectory)'
       zipAfterPublish: true
 
